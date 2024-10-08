@@ -1,5 +1,5 @@
 <?php
-public static $consentFields = [
+$consentFields = [
 	"vumc_consent_part_2_complete",
 	"cchmc_consent_part_2_complete",
 	"chop_consent_part_2_complete",
@@ -13,7 +13,7 @@ public static $consentFields = [
 	"pdf_file"
 ];
 
-public static $otherFields = [
+$otherFields = [
 	"site_id",
 	"crsp_sample_id",
 	"participant_lab_id",
