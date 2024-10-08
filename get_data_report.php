@@ -177,3 +177,13 @@ foreach($recordData as $dataRow) {
 		}
 	}
 }
+
+$reportData = [
+	"adultCount" => count($adultRecords),
+	"pediatricCount" => count($consentedRecords) - count($adultRecords) - count($withdrawnRecords),
+	"householdSizeCounts" => $houseCounts,
+	"ageCounts" => $ageCounts,
+	"insuranceCounts" => $insuranceCounts,
+	"educationCounts" => $educationCounts,
+	"genderCounts" => $genderCounts
+];
