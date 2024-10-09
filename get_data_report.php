@@ -14,8 +14,8 @@ $adultData = DataAnalysis::filterDataByArray($consentedData, $adultRecords);
 $pediatricRecords = DataAnalysis::getPediatricRecords($consentedData);
 $pediatricData = DataAnalysis::filterDataByArray($consentedData, $pediatricRecords);
 
-$metreeRecords = [];
-$giraRecords = [];
+$metreeRecords = DataAnalysis::mapFieldByRecord($consentedData,["metree_results_processed_date"]);
+$giraRecords = DataAnalysis::mapFieldByRecord($consentedData, ["date_gira_ehr_upload"]);
 
 $genderOptions = $module->getChoiceLabels("gender_identity",$project_id);
 $insuranceOptions = $module->getChoiceLabels("covered_by_health_insurance",$project_id);
