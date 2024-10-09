@@ -51,9 +51,11 @@ foreach($educationOptions as $value => $label) {
 $reportData = [
 	"adultCount" => count($adultRecords),
 	"pediatricCount" => count($pediatricRecords),
+	"giraCount" => count($giraRecords),
+	"metreeCount" => count($metreeRecords),
 	"householdSizeCounts" => $houseCounts,
 	"ageCounts" => $ageCounts,
 	"insuranceCounts" => $insuranceCounts,
 	"educationCounts" => $educationCounts,
-	"genderCounts" => $genderCounts
+	"genderCounts" => $genderCounts,
 ];
