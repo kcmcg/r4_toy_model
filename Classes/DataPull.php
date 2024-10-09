@@ -46,6 +46,8 @@ class DataPull
 		"pediatric_fhh_rescue_complete"
 	];
 	
+	public const recordIdConst = "redcap_record_id";
+	
 	private $module;
 	
 	private $project_id;
@@ -70,6 +72,10 @@ class DataPull
 				"fields" => array_merge([$this->getRecordIdField()], self::$consentFields, self::$otherFields),
 				"return_format" => "json-array"
 			]);
+			
+			foreach($this->dataCache as &$dataRow) {
+				$dataRow[self::recordIdConst] = $dataRow[$this->getRecordIdField()];
+			}
 		}
 		
 		return $this->dataCache;

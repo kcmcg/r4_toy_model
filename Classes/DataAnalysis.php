@@ -22,7 +22,13 @@ class DataAnalysis
 	];
 	
 	public static function getConsentedRecords($recordData) {
-		return self::mapFieldByRecord($recordData, DataPull::$consentFields, ["2"],false);
+		 $consentedRecords = self::mapFieldByRecord($recordData, DataPull::$consentFields, ["2"],false);
+		 $withdrawnRecords = self::mapFieldByRecord($recordData, "participant_withdrawal",["1"],false);
+		 
+		 foreach($withdrawnRecords as $recordId => $withdrawn) {
+			unset($consentedRecords[$recordId]);
+		 }
+		 return $consentedRecords;
 	}
 	
 	public static function getAdultRecords($recordData) {
