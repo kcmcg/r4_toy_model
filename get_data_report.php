@@ -24,7 +24,7 @@ foreach($recordData as $dataRow) {
 		$withdrawnRecords[$recordId] = 1;
 	}
 	
-	if(isset($dataRow["age"]) && $dataRow["age"] > 0) {
+	if(isset($dataRow["age"]) && $dataRow["age"] > 18) {
 		$adultRecords[$recordId] = 1;
 	}
 	
@@ -59,6 +59,9 @@ foreach($insuranceOptions as $value => $label) {
 }
 foreach($educationOptions as $value => $label) {
 	$educationCounts[$label] = 0;
+}
+foreach($genderOptions as $value => $label) {
+	$genderCounts[$label] = 0;
 }
 
 foreach($recordData as $dataRow) {
@@ -121,9 +124,11 @@ foreach($recordData as $dataRow) {
 $reportData = [
 	"adultCount" => count($adultRecords),
 	"pediatricCount" => count($consentedRecords) - count($adultRecords) - count($withdrawnRecords),
+	"giraCount" => count($giraRecords),
+	"metreeCount" => count($metreeRecords),
 	"householdSizeCounts" => $houseCounts,
 	"ageCounts" => $ageCounts,
 	"insuranceCounts" => $insuranceCounts,
 	"educationCounts" => $educationCounts,
-	"genderCounts" => $genderCounts
+	"genderCounts" => $genderCounts,
 ];
