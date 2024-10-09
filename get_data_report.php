@@ -28,7 +28,7 @@ $educationCounts = [];
 $genderCounts = [];
 
 foreach(DataAnalysis::$ageBrackets as $label => $range) {
-	$recordInRange = DataAnalysis::mapFieldByRecordInRange($consentedData,"age", $range[0],$range[1]);
+	$recordInRange = DataAnalysis::mapFieldByRecordInRange($consentedData,"age", $range[1],$range[0]);
 	$ageCounts[$label] = count($recordInRange);
 }
 foreach($genderOptions as $value => $label) {
@@ -36,7 +36,7 @@ foreach($genderOptions as $value => $label) {
 	$genderCounts[$label] = count($recordInRange);
 }
 foreach(DataAnalysis::$houseSizeBrackets as $label => $range) {
-	$recordInRange = DataAnalysis::mapFieldByRecordInRange($adultData,"how_many_people_are_curren", $range[0],$range[1]);
+	$recordInRange = DataAnalysis::mapFieldByRecordInRange($adultData,"how_many_people_are_curren", $range[1],$range[0]);
 	$houseSizeCounts[$label] = count($recordInRange);
 }
 foreach($insuranceOptions as $value => $label) {
